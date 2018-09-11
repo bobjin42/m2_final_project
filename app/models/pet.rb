@@ -5,4 +5,5 @@ class Pet < ApplicationRecord
   has_many :adoptors, :class_name => "User", through: :adoptions
   has_many :givers, :class_name => "User", through: :givings
 
+
 end

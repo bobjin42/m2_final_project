@@ -1,0 +1,44 @@
+<h1>Rabbit Adoption List</h1>
+
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<table style="width:100%">
+<tr>
+  <th>Name</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Adotion</th>
+</tr>
+<% @rabbits.each do |rabbit| %>
+<tr>
+  <td><%= rabbit.name %></td>
+  <td><%= rabbit.age %></td>
+  <td><%= rabbit.gender %></td>
+  <td><%= link_to "More Detail", pet_path(rabbit) %></td>
+  <td></td>
+</tr>
+<% end %>
+</table>
+
+<%= link_to "Adopt Different Pets", pets_path %>

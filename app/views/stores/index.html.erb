@@ -1,7 +1,14 @@
 <h1>Welcome to Flatiron Pet Shelter</h1><br>
+
+
+<p>Welcome </p>
 <p>Please Choose Shelter Location</p>
 <ul>
   <% @stores.each do |store| %>
   <li><%= link_to store.branch_name, store_path(store)%></li>
   <% end %>
 </ul>
+
+<br>
+<p>If You wanna adopt pets or give pet please join in us</p>
+<%= button_to 'Join Us', new_user_path, {method: :get} %>

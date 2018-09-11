@@ -1,0 +1,49 @@
+<h1>Welcome <%= @user.name%></h1>
+
+<style>
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+</style>
+<table style="width:100%">
+<tr>
+  <th>Pet Name</th>
+  <th>Pet Type</th>
+  <th>Pet Breed</th>
+  <th>Age</th>
+  <th>Gender</th>
+  <th>Status</th>
+</tr>
+<% @user.pets.each do |pet| %>
+<tr>
+  <td><%= pet.name %></td>
+  <td><%= pet.animal_type %></td>
+  <td><%= pet.breed %></td>
+  <td><%= pet.age %></td>
+  <td><%= pet.gender %></td>
+  <%  if pet.status == true %>
+  <td><%= " #{pet.name} is ready for Adoption" %></td>
+  <% else %>
+  <td><%= "#{pet.adoptor.name} adopted #{pet.name}" %></td>
+  <% end %>
+</tr>
+<% end %>
+</table>

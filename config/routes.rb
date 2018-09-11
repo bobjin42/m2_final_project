@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :givings
-  resources :adoptions
+  resources :givings, only:[:show]
+  resources :adoptions, only:[:show]
   resources :pets
   resources :stores
   resources :users
@@ -9,7 +9,14 @@ Rails.application.routes.draw do
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  post '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy'
+
+  get '/cats' => 'pets#cat'
+  get '/dogs' => 'pets#dog'
+  get '/rabbits' => 'pets#rabbit'
+  get '/hamsters' => 'pets#hamster'
+
+  post '/adoption' => 'pets#adoption'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

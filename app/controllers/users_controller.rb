@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(sub_params)
       if @user.save
+        log_in @user
         session[:user_id] = @user.id
+        flash[:success] = "Welcome to our store"
         redirect_to stores_path
       else
         render 'new'

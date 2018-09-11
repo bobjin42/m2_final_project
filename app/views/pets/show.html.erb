@@ -1,0 +1,8 @@
+<h1>hello <%= @pet.name %></h1>
+
+
+<p><%= @pet.age %></p>
+<p><%= @pet.breed %></p>
+<p><%= @pet.gender %></p>
+
+<%= button_to "Adopt this Pet", user_path(@user), method: :get %>

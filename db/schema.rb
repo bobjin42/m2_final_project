@@ -33,8 +33,9 @@ ActiveRecord::Schema.define(version: 2018_09_10_143223) do
     t.string "animal_type"
     t.string "breed"
     t.integer "age"
-    t.string "color"
+    t.string "gender"
     t.integer "store_id"
+    t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_143223) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "password_digest"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
