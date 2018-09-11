@@ -1,0 +1,5 @@
+<h1>Welcome to <%= "#{@store.branch_name}" %></h1>
+
+
+  <%= button_to "Adopt a Pet", pets_path, {method: "get"} %>
+  <%= button_to "Give a Pet", new_pet_path, {method: "get"} %>

@@ -1,0 +1,25 @@
+<h1>Giving Pet Form</h1>
+
+<%= form_for @pet do |f| %>
+
+  <%= f.label :name%>
+  <%= f.text_field :name %><br>
+  <br>
+  <%= f.label "Animal Type"%>
+  <%= f.select("animal_type", ["Cat", "Dog", "Rabbit", "Hamster"]) %><br>
+  <br>
+  <%= f.label :breed%>
+  <%= f.text_field :breed %><br>
+  <br>
+  <%= f.label :age%>
+  <%= f.number_field :age %><br>
+  <br>
+  <%= f.label :color%>
+  <%= f.text_field :color %><br>
+  <br>
+  <%= f.hidden_field :store_id %>
+
+
+
+  <%= f.submit "Give Your Pet" %>
+<% end %>

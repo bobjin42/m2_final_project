@@ -1,0 +1,7 @@
+<h1>Welcome to Flatiron Pet Shelter</h1><br>
+<p>Please Choose Shelter Location</p>
+<ul>
+  <% @stores.each do |store| %>
+  <li><%= link_to store.branch_name, store_path(store)%></li>
+  <% end %>
+</ul>
