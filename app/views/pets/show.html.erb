@@ -5,4 +5,4 @@
 <p><%= @pet.breed %></p>
 <p><%= @pet.gender %></p>
 
-<%= button_to "Adopt this Pet", user_path(@user), method: :get %>
+<%= button_to "Adopt this Pet", adoption_pet_path, {method: :post, params:{pet_id:@pet.id}} %>

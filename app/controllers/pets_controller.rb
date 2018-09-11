@@ -1,4 +1,6 @@
 class PetsController < ApplicationController
+  include SessionsHelper
+  before_action :authorized, only:[:index]
 
   def index
     @pets = Pet.all
@@ -9,27 +11,31 @@ class PetsController < ApplicationController
   end
 
   def cat
-    @cats = Pet.all.select{|pet| pet.animal_type == "Cat"}
+    @store = Store.find(session[:store_id])
+    @cats = @store.pets.all.select{|pet| pet.animal_type == "Cat" && pet.status == true}
   end
 
   def dog
-    @dogs = Pet.all.select{|pet| pet.animal_type == "Dog"}
+    @store = Store.find(session[:store_id])
+    @dogs = @store.pets.all.select{|pet| pet.animal_type == "Dog" && pet.status == true}
   end
 
   def rabbit
-    @rabbits = Pet.all.select{|pet| pet.animal_type == "Rabbit"}
+    @store = Store.find(session[:store_id])
+    @rabbits = @store.pets.all.select{|pet| pet.animal_type == "Rabbit" && pet.status == true}
   end
 
   def hamster
-    @hamsters = Pet.all.select{|pet| pet.animal_type == "Hamster"}
+    @store = Store.find(session[:store_id])
+    @hamsters = @store.pets.all.select{|pet| pet.animal_type == "Hamster" && pet.status == true}
   end
 
   def create
     @pet = Pet.new(sub_params)
-    # @pet.giver_id = session[:id]
+    # @pet.giver_id = session[:user_id]
     @pet.store_id = session[:store_id]
       if @pet.save
-        @giving = Giving.create(giver_id: session[:id], pet_id: @pet.id)
+        @giving = Giving.create(giver_id: session[:user_id], pet_id: @pet.id, giving_date: Time.now)
         redirect_to giving_path(@giving)
       else
         render 'new'
@@ -38,16 +44,18 @@ class PetsController < ApplicationController
 
   def show
     @pet = pet_find
-    @user = User.find(session[:id])
+    @user = User.find(session[:user_id])
   end
 
   def adoption
-    byebug
     @pet = Pet.find(params[:pet_id])
-    if session[:id] && !session[:id].empty?
-      @adoption = Adoption.create(adoptor_id: session[:id], pet_id: @pet.id)
+    if session[:user_id]
+      @pet.store_id = session[:store_id]
       @pet.status = false
-      redirect_to user_path(@adoption.adoptor)
+      @pet.save
+      @adoption = Adoption.create!(adoptor_id: session[:user_id], pet_id: @pet.id, adoption_date: Time.now)
+      @user = @adoption.adoptor
+      redirect_to user_path(@user)
     else
       redirect_to new_user_path
     end

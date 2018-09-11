@@ -23,6 +23,7 @@ table#t01 th {
     color: white;
 }
 </style>
+<p>Adoption List</p>
 <table style="width:100%">
 <tr>
   <th>Pet Name</th>
@@ -32,18 +33,38 @@ table#t01 th {
   <th>Gender</th>
   <th>Status</th>
 </tr>
-<% @user.pets.each do |pet| %>
+<% @user.adoptor_pets.each do |pet| %>
 <tr>
   <td><%= pet.name %></td>
   <td><%= pet.animal_type %></td>
   <td><%= pet.breed %></td>
   <td><%= pet.age %></td>
   <td><%= pet.gender %></td>
-  <%  if pet.status == true %>
-  <td><%= " #{pet.name} is ready for Adoption" %></td>
-  <% else %>
-  <td><%= "#{pet.adoptor.name} adopted #{pet.name}" %></td>
+  <td><%= "You have adopted #{pet.name} at #{pet.adoptions.last.adoption_date}" %></td>
+</tr>
   <% end %>
+</table>
+
+<p>Given List</p>
+<table style="width:100%">
+  <tr>
+    <th>Pet Name</th>
+    <th>Pet Type</th>
+    <th>Pet Breed</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Status</th>
+  </tr>
+<% @user.giver_pets.each do |pet| %>
+<tr>
+  <td><%= pet.name %></td>
+  <td><%= pet.animal_type %></td>
+  <td><%= pet.breed %></td>
+  <td><%= pet.age %></td>
+  <td><%= pet.gender %></td>
+  <td><%= "You have given #{pet.name} at #{pet.givings.last.giving_date}" %></td>
 </tr>
 <% end %>
 </table>
+
+<%= link_to "Log out", logout_path, method: :delete %>

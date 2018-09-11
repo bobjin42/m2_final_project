@@ -1,7 +1,10 @@
 <h1>Welcome to Flatiron Pet Shelter</h1><br>
 
-
-<p>Welcome </p>
+<% if current_user %>
+<p>Welcome <%= current_user.name %></p>
+<% else %>
+<%= button_to "Log in", login_path, method: :get %>
+<% end %>
 <p>Please Choose Shelter Location</p>
 <ul>
   <% @stores.each do |store| %>
@@ -10,5 +13,10 @@
 </ul>
 
 <br>
+<% if current_user == nil%>
 <p>If You wanna adopt pets or give pet please join in us</p>
 <%= button_to 'Join Us', new_user_path, {method: :get} %>
+
+<% else %>
+ <%= button_to 'Log out', logout_path, method: :delete %>
+<% end %>

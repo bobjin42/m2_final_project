@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/rabbits' => 'pets#rabbit'
   get '/hamsters' => 'pets#hamster'
 
-  post '/adoption' => 'pets#adoption'
+  post '/adoption' => 'pets#adoption', as: "adoption_pet"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
