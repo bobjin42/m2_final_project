@@ -1,8 +1,15 @@
-<%= form_for @pet do |f| %>
+<h1>Giving Your Adopted pets back to Store</h1>
 
-  <%= f.label :name%>
-  <%= f.text_field :name %><br>
-
-
-  <%= f.submit "Give Your Pet" %>
+<% if @pets.empty? %>
+<p>You Don't have any Pets that Adopted from our store</p><br>
+<p>Wanna Adopt some?</p>
+<%= button_to "Adopt Pets", pets_path, {method: "get"} %>
+<% else %>
+<%= form_for @pet, :url => change_status_path do |f| %>
+<%= f.collection_check_boxes(:id, @pets, :id, :name ) %>
+<%= f.submit "Giving Pet" %>
 <% end %>
+<% end %>
+
+
+<%= link_to "Back to Store page", stores_path %>

@@ -5,4 +5,8 @@
 <p><%= @pet.breed %></p>
 <p><%= @pet.gender %></p>
 
+<% if @pet.status == true %>
 <%= button_to "Adopt this Pet", adoption_pet_path, {method: :post, params:{pet_id:@pet.id}} %>
+<% else %>
+<%= "This pet has been adopted by #{@pet.adoptors.last.name}"%>
+<% end %>

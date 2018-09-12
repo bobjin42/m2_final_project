@@ -1,13 +1,30 @@
 class PetsController < ApplicationController
   include SessionsHelper
-  before_action :authorized, only:[:index]
+  before_action :authorized, only:[:index, :new]
 
   def index
     @pets = Pet.all
   end
 
-  def new
+  def giving_new
     @pet = Pet.new
+    render partial: 'pets/form'
+  end
+
+  def giving_existing
+    @pets = current_user.adoptor_pets.where(status: false)
+    @pet = Pet.new
+    render partial: 'pets/giving'
+  end
+
+  def change_status
+    params[:pet][:id].each do |id|
+      if id != ""
+        Pet.find(id).update(status: true)
+        Giving.create(giver_id: session[:user_id], pet_id: id, giving_date: Time.now)
+      end
+    end
+    redirect_to user_path(current_user)
   end
 
   def cat
@@ -36,7 +53,7 @@ class PetsController < ApplicationController
     @pet.store_id = session[:store_id]
       if @pet.save
         @giving = Giving.create(giver_id: session[:user_id], pet_id: @pet.id, giving_date: Time.now)
-        redirect_to giving_path(@giving)
+        redirect_to user_path(@giving.giver)
       else
         render 'new'
       end

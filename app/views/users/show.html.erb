@@ -33,7 +33,7 @@ table#t01 th {
   <th>Gender</th>
   <th>Status</th>
 </tr>
-<% @user.adoptor_pets.each do |pet| %>
+<% @user.adoptor_pets.where(status: false).each do |pet| %>
 <tr>
   <td><%= pet.name %></td>
   <td><%= pet.animal_type %></td>
@@ -45,7 +45,7 @@ table#t01 th {
   <% end %>
 </table>
 
-<p>Given List</p>
+<p>New Given List</p>
 <table style="width:100%">
   <tr>
     <th>Pet Name</th>
@@ -67,4 +67,5 @@ table#t01 th {
 <% end %>
 </table>
 
+<%= link_to "Back to Store page", stores_path %><br>
 <%= link_to "Log out", logout_path, method: :delete %>
