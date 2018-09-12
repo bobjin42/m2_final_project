@@ -1,6 +1,30 @@
 @import "bootstrap";
 
+body{
+  background-color: solid black !important;
+}
 
 .navbar-right {
   margin-right: 100px;
+}
+
+.nav-item:last-child {
+  margin-right: 30px;
+}
+
+.p1 {
+  weight: 650px;
+  height: 640px;
+}
+
+.welcome > h3 {
+  font-size: 80px;
+  margin-bottom: 100px;
+  color: white;
+  opacity: 1.0;
+  font-family: Gloria Hallelujah, cursive;
+}
+
+.login {
+  margin-bottom: 70px;
 }
