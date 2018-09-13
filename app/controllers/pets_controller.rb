@@ -32,21 +32,6 @@ class PetsController < ApplicationController
     @pets = @store.pets.all.select{|pet| pet.animal_type == params[:type] && pet.status == true}
   end
 
-  # def dog
-  #   @store = Store.find(session[:store_id])
-  #   @dogs = @store.pets.all.select{|pet| pet.animal_type == "Dog" && pet.status == true}
-  # end
-  #
-  # def rabbit
-  #   @store = Store.find(session[:store_id])
-  #   @rabbits = @store.pets.all.select{|pet| pet.animal_type == "Rabbit" && pet.status == true}
-  # end
-  #
-  # def hamster
-  #   @store = Store.find(session[:store_id])
-  #   @hamsters = @store.pets.all.select{|pet| pet.animal_type == "Hamster" && pet.status == true}
-  # end
-
   def create
     @pet = Pet.new(sub_params)
     # @pet.giver_id = session[:user_id]

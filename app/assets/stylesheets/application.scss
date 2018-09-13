@@ -219,6 +219,7 @@ ul.navbar-nav {
 
 
 #show_pet {
+        margin-top: 20px;
         position:absolute;
         img {
           width: 300px; /* You can set the dimensions to whatever you want */
@@ -246,4 +247,8 @@ ul.navbar-nav {
   margin-top: 20px;
   width:250px;
   height:400px;
+}
+.product-description>.hover-content>.add-to-cart-btn>a{
+  color:black;
+  font-size: 20px;
 }
