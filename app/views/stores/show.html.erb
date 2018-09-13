@@ -1,12 +1,16 @@
-<div class="container">
-
+<div class="container" id="branch">
+  <div class="row ">
+  <div class="col-sm-12 text-center ">
+    <br><br>
 <h1>Welcome to <%= "#{@store.branch_name}" %></h1>
-<div class="container" style="background-image:'https://hart-legal.com/wp-content/uploads/2017/01/AdobeStock_111623497.jpeg'" >
 
-</div>
 
 <%= image_tag "store_#{@store.id}.jpg",class:"img-responsive"%>
+<br>
 
-  <%= button_to "Adopt a Pet", pets_path, {method: "get"} %>
-  <%= button_to "Give a Pet", new_pet_path, {method: "get"} %>
+  <%= button_to "Adopt a Pet", pets_path, {method: "get",class:'btn btn-big btn-primary'} %>
+  <br>
+  <%= button_to "Give a Pet", new_pet_path, {method: "get",class:'btn btn-big btn-primary'} %>
+  </div>
+  </div>
 </div>

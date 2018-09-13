@@ -1,12 +1,53 @@
-<h1>Hello</h1>
+<div class="container" id="choose_pet">
+<div class="row">
+      <div class="col-lg-3 text-center">
+            <div class="single-pet-wrapper">
+                <!-- Product Image -->
+                <div class="product-img">
+                    <%= image_tag ("choose_cat.jpg") %>
+                </div>
+                <div class="product-description">
+                    <%= link_to "Cat", storepets_path(:type=>"Cat"),:class=>"btn btn-primary" %>
+                </div>
+            </div>
+        </div>
 
-<table>
-  <tr>
-    <td><%= link_to "Cat", storepets_path(:type=>"Cat") %></td>
-    <td><%= link_to "Dog", storepets_path(:type=>"Dog") %></td>
-  </tr>
-  <tr>
-    <td><%= link_to "Rabbit", storepets_path(:type=>"Rabbit") %></td>
-    <td><%= link_to "Hamster", storepets_path(:type=>"Hamster") %></td>
-  </tr>
-</table>
+        <div class="col-lg-3 text-center">
+              <div class="single-pet-wrapper">
+                  <!-- Product Image -->
+                  <div class="product-img">
+                      <%= image_tag ("choose_dog.jpg") %>
+                  </div>
+                  <div class="product-description">
+                      <%= link_to "Dog", storepets_path(:type=>"Dog"),:class=>"btn btn-big btn-primary" %>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-3 text-center">
+                <div class="single-pet-wrapper">
+                    <!-- Product Image -->
+                    <div class="product-img">
+                        <%= image_tag ("choose_rabbit.jpg") %>
+                    </div>
+                    <div class="product-description">
+                        <%= link_to "Rabbit", storepets_path(:type=>"Rabbit"),:class=>"btn btn-big btn-primary" %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 text-center">
+                  <div class="single-pet-wrapper">
+                      <!-- Product Image -->
+                      <div class="product-img">
+                          <%= image_tag ("choose_hamster.jpg") %>
+                      </div>
+                      <div class="product-description">
+                        <%= link_to "Hamster", storepets_path(:type=>"Hamster"),:class=>"btn btn-big btn-primary" %>
+                      </div>
+                  </div>
+              </div>
+
+
+  </div>
+</div>
