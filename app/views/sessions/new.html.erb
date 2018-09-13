@@ -30,7 +30,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('assets/bg-01.jpg');">
 			<div class="wrap-login100">
-				
+
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape" style="content: url('assets/logo.jpg'); height: 130px; weight: 130px "></i>
 					</span>
@@ -38,15 +38,15 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 						J.T.S
 					</span>
-      <%= form_for(:session, url: login_path) do |f| %>
+      			<%= form_for(:session, url: login_path) do |f| %>
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<%= f.text_field :name, class: "input100" %>
+							<%= f.text_field :name, class: "input100", placeholder: "username" %>
 
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						    <%= f.password_field :password, class: "input100" %>
+						    <%= f.password_field :password, class: "input100", placeholder: "password" %>
 
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
