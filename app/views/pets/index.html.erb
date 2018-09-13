@@ -1,49 +1,49 @@
 <div class="container" id="choose_pet">
 <div class="row">
-      <div class="col-sm-6">
+      <div class="col-lg-3 text-center">
             <div class="single-pet-wrapper">
                 <!-- Product Image -->
                 <div class="product-img">
-                    <%= image_tag ("choose_cat.jpg"),:class=>"img-responsive" %>
+                    <%= image_tag ("choose_cat.jpg") %>
                 </div>
                 <div class="product-description">
-                    <%= link_to "Cat", storepets_path(:type=>"Cat") %>
+                    <%= link_to "Cat", storepets_path(:type=>"Cat"),:class=>"btn btn-primary" %>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-lg-3 text-center">
               <div class="single-pet-wrapper">
                   <!-- Product Image -->
                   <div class="product-img">
-                      <%= image_tag ("choose_dog.jpg"),:class=>"img-responsive" %>
+                      <%= image_tag ("choose_dog.jpg") %>
                   </div>
                   <div class="product-description">
-                      <%= link_to "Dog", storepets_path(:type=>"Dog") %>
+                      <%= link_to "Dog", storepets_path(:type=>"Dog"),:class=>"btn btn-big btn-primary" %>
                   </div>
               </div>
           </div>
 
-          <div class="col-sm-6">
+          <div class="col-lg-3 text-center">
                 <div class="single-pet-wrapper">
                     <!-- Product Image -->
                     <div class="product-img">
-                        <%= image_tag ("choose_rabbit.jpg"),:class=>"img-responsive" %>
+                        <%= image_tag ("choose_rabbit.jpg") %>
                     </div>
                     <div class="product-description">
-                        <%= link_to "Rabbit", storepets_path(:type=>"Rabbit") %>
+                        <%= link_to "Rabbit", storepets_path(:type=>"Rabbit"),:class=>"btn btn-big btn-primary" %>
                     </div>
                 </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-lg-3 text-center">
                   <div class="single-pet-wrapper">
                       <!-- Product Image -->
                       <div class="product-img">
-                          <%= image_tag ("choose_hamster.jpg"),:class=>"img-responsive" %>
+                          <%= image_tag ("choose_hamster.jpg") %>
                       </div>
                       <div class="product-description">
-                        <%= link_to "Hamster", storepets_path(:type=>"Hamster") %>
+                        <%= link_to "Hamster", storepets_path(:type=>"Hamster"),:class=>"btn btn-big btn-primary" %>
                       </div>
                   </div>
               </div>
