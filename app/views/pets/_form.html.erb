@@ -1,4 +1,4 @@
-<h1>Giving Pet Form</h1>
+<div class="container text-center petform"><h1>Giving Pet Form</h1>
 
 <%= form_for @pet do |f| %>
 
@@ -21,5 +21,6 @@
   <br>
 
 
-  <%= f.submit "Give Your Pet" %>
+  <%= f.submit "Give Your Pet",class: "btn btn-primary" %>
 <% end %>
+</div>

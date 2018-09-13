@@ -8,13 +8,13 @@ class PetsController < ApplicationController
 
   def giving_new
     @pet = Pet.new
-    render partial: 'pets/form'
+    render :_form
   end
 
   def giving_existing
     @pets = current_user.adoptor_pets.where(status: false)
     @pet = Pet.new
-    render partial: 'pets/giving'
+    render :_giving
   end
 
   def change_status
