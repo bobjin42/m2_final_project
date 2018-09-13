@@ -1,15 +1,12 @@
-
+<div class="container">
 
 <h1>Welcome to <%= "#{@store.branch_name}" %></h1>
+<div class="container" style="background-image:'https://hart-legal.com/wp-content/uploads/2017/01/AdobeStock_111623497.jpeg'" >
 
-<% if @store.id == 1 %>
-<%= image_tag "queens_branch.jpg"%>
-<% elsif  @store.id == 2%>
-<%= image_tag ("mahanttan_branch.png") %>
-<% else %>
-<%= image_tag ("long_island_branch.png") %>
-<% end %>
+</div>
 
+<%= image_tag "store_#{@store.id}.jpg",class:"img-responsive"%>
 
   <%= button_to "Adopt a Pet", pets_path, {method: "get"} %>
   <%= button_to "Give a Pet", new_pet_path, {method: "get"} %>
+</div>

@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <td><%= link_to "Cat", cats_path %></td>
-    <td><%= link_to "Dog", dogs_path %></td>
+    <td><%= link_to "Cat", storepets_path(:type=>"Cat") %></td>
+    <td><%= link_to "Dog", storepets_path(:type=>"Dog") %></td>
   </tr>
   <tr>
-    <td><%= link_to "Rabbit", rabbits_path %></td>
-    <td><%= link_to "Hamster", hamsters_path %></td>
+    <td><%= link_to "Rabbit", storepets_path(:type=>"Rabbit") %></td>
+    <td><%= link_to "Hamster", storepets_path(:type=>"Hamster") %></td>
   </tr>
 </table>

@@ -4,17 +4,17 @@ Rails.application.routes.draw do
   resources :pets
   resources :stores
   resources :users
-
+  root :to => "stores#index"
   get 'sessions/new'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
-  get '/cats' => 'pets#cat'
-  get '/dogs' => 'pets#dog'
-  get '/rabbits' => 'pets#rabbit'
-  get '/hamsters' => 'pets#hamster'
+  get '/storepets' => 'pets#pet'
+  # get '/dogs' => 'pets#dog'
+  # get '/rabbits' => 'pets#rabbit'
+  # get '/hamsters' => 'pets#hamster'
 
   post '/adoption' => 'pets#adoption', as: "adoption_pet"
 

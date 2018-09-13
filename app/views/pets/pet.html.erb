@@ -1,0 +1,44 @@
+<h1 class="text-center">pet Adoption List</h1>
+<div class="container">
+<div class="row ">
+     <% @pets.each do |pet| %>
+                            <!-- Single Product -->
+                            <div class="col-sm-4">
+
+                                <div class="single-pet-wrapper">
+                                    <!-- Product Image -->
+                                    <div class="product-img">
+                                      <% if pet.image %>
+                                        <%= image_tag (pet.image),:class=>"img-responsive" %>
+                                        <% end %>
+
+                                    </div>
+
+                                    <!-- Product Description -->
+                                    <div class="product-description">
+                                        <span><%= pet.age %> years old</span>
+                                        <a href="single-product-details.html">
+                                            <h6><%= pet.name %></h6>
+                                        </a>
+                                        <!-- <p class="product-price"><%= pet.gender %></p> -->
+
+                                        <!-- Hover Content -->
+                                        <div class="hover-content">
+                                            <!-- Add to Cart -->
+                                            <div class="add-to-cart-btn">
+                                              <%= link_to "details",pet,:class=>"btn essence-btn" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+<% end %>
+
+</div>
+</div>
+
+
+
+
+<%= link_to "Adopt Different Pets", pets_path,class: "text-center" %>

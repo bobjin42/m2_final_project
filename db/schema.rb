@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_143223) do
     t.integer "age"
     t.string "gender"
     t.integer "store_id"
+    t.string "image"
     t.boolean "status", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

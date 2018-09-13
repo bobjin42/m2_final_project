@@ -27,25 +27,25 @@ class PetsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def cat
+  def pet
     @store = Store.find(session[:store_id])
-    @cats = @store.pets.all.select{|pet| pet.animal_type == "Cat" && pet.status == true}
+    @pets = @store.pets.all.select{|pet| pet.animal_type == params[:type] && pet.status == true}
   end
 
-  def dog
-    @store = Store.find(session[:store_id])
-    @dogs = @store.pets.all.select{|pet| pet.animal_type == "Dog" && pet.status == true}
-  end
-
-  def rabbit
-    @store = Store.find(session[:store_id])
-    @rabbits = @store.pets.all.select{|pet| pet.animal_type == "Rabbit" && pet.status == true}
-  end
-
-  def hamster
-    @store = Store.find(session[:store_id])
-    @hamsters = @store.pets.all.select{|pet| pet.animal_type == "Hamster" && pet.status == true}
-  end
+  # def dog
+  #   @store = Store.find(session[:store_id])
+  #   @dogs = @store.pets.all.select{|pet| pet.animal_type == "Dog" && pet.status == true}
+  # end
+  #
+  # def rabbit
+  #   @store = Store.find(session[:store_id])
+  #   @rabbits = @store.pets.all.select{|pet| pet.animal_type == "Rabbit" && pet.status == true}
+  # end
+  #
+  # def hamster
+  #   @store = Store.find(session[:store_id])
+  #   @hamsters = @store.pets.all.select{|pet| pet.animal_type == "Hamster" && pet.status == true}
+  # end
 
   def create
     @pet = Pet.new(sub_params)

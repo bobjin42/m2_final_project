@@ -11,10 +11,20 @@ body{
 .nav-item:last-child {
   margin-right: 30px;
 }
+.navbar-right>li {
+  margin-left: 30px;
+}
+
 
 .p1 {
   weight: 650px;
-  height: 640px;
+  min-height: 300px;
+}
+#cover{
+  display: table;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
 }
 
 .welcome > h3 {
@@ -28,3 +38,181 @@ body{
 .login {
   margin-bottom: 70px;
 }
+
+.single-pet-wrapper {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 50px;
+    overflow: hidden;
+
+
+    background-color: white-color;
+    .product-img {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: -webkit-box;
+        img {
+          width: 300px; /* You can set the dimensions to whatever you want */
+          height: 300px;
+          object-fit: cover;
+
+        }
+        .hover-img {
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .product-badge {
+            height: 25px;
+            background-color: dark-color;
+            color:white-color;
+            font-family: font-ubuntu;
+            font-weight: 700;
+            font-size: 12px;
+            padding: 0 10px;
+            display: inline-block;
+            line-height: 25px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            &.offer-badge {
+                background-color: hover-color;
+            }
+            &.new-badge {
+                background-color: bg-default;
+            }
+        }
+        .product-favourite {
+            a {
+                position: absolute;
+                height: 25px;
+                width: 45px;
+                font-size: 14px;
+                color: #ccc;
+                top: 20px;
+                right: 20px;
+                z-index: 10;
+                line-height: 25px;
+                background-color: white-color;
+                box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+                text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                &.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+    .product-description {
+        position: relative;
+        z-index: 1;
+        padding-top: 25px;
+        span {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: text-color;
+            margin-bottom: 15px;
+            letter-spacing: 0.75px;
+            font-weight: 600;
+        }
+        h6 {
+            color: #222222;
+            margin-bottom: 5px;
+        }
+        p {
+            margin-bottom: 0;
+            font-size: 14px;
+            font-family: font-ubuntu;
+            font-weight: 700;
+            color: dark-color;
+            span {
+                font-size: 14px;
+                font-family: font-ubuntu;
+                font-weight: 700;
+                color: #aaaaaa;
+                margin-right: 10px;
+                text-decoration: line-through;
+            }
+        }
+        .hover-content {
+            position: absolute;
+            width: calc(100% - 40px);
+            top: -70px;
+            left: 20px;
+            right: 20px;
+            opacity: 0;
+            visibility: hidden;
+
+            .essence-btn {
+                width: 100%;
+            }
+        }
+    }
+    .favme {
+        cursor: pointer;
+        color: #ccc;
+        &.active {
+            color: hover-color !important;
+        }
+        &.is_animating {
+            animation: favme-anime .5s;
+        }
+    }
+    &:hover {
+        .product-img {
+            .hover-img {
+                opacity: 1;
+                visibility: visible;
+            }
+            .product-favourite a {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        .hover-content {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.navbar  {
+	margin-bottom: 0;
+	background: #444;
+	border: 0;
+	-moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+	-o-transition: all .6s; -moz-transition: all .6s; -webkit-transition: all .6s; -ms-transition: all .6s; transition: all .6s;
+}
+#dropdown-menu {
+  background: #444;
+	border: 0;
+}
+
+ul.navbar-nav {
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 14px;
+	color: #fff;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.navbar-inverse ul.navbar-nav li a { padding-top: 20px; padding-bottom: 20px; color: #fff; border: 0; }
+.navbar-inverse ul.navbar-nav li a:hover { color: #ddd; border: 0; }
+.navbar-inverse ul.navbar-nav li a:focus { color: #ddd; outline: 0; border: 0; }
+
+.navbar-brand {
+	width: 102px;
+	height: 60px;
+	background:  left center no-repeat;
+	text-indent: -99999px;
+}
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand { margin-left: 0; }

@@ -7,6 +7,7 @@ class CreatePets < ActiveRecord::Migration[5.2]
       t.integer :age
       t.string :gender
       t.integer :store_id
+      t.string :image
       t.boolean :status, :default => true
       t.timestamps
     end
