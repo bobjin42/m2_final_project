@@ -10,4 +10,8 @@ class StoresController < ApplicationController
     session[:store_id] = @store.id
   end
 
+  def tips
+
+  end
+
 end

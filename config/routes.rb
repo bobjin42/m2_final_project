@@ -22,5 +22,7 @@ Rails.application.routes.draw do
   get '/giving_existing' => 'pets#giving_existing', as: "new_existing"
 
   post '/change_status' => 'pets#change_status', as: "change_status"
+
+  get '/tips' => 'stores#tips', as: "tips"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

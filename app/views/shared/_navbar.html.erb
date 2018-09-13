@@ -20,7 +20,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Tips</a>
+        <a class="nav-link" href="tips">Tips</a>
       </li>
   </ul>
   <ul class="navbar-nav navbar-right ml-md-auto">
@@ -29,7 +29,7 @@
       <li><a  class="nav-item " href="/users/new">Sigup</a></li>
       <li><%= link_to "Login", login_path, method: :get %>
       <% else %>
-      <li><%= "Hello #{current_user.name}" %></li>
+      <li><%= link_to "Hello #{current_user.name}", current_user %></li>
       <li><%= link_to "Logout", logout_path, method: :delete %>
 </li>
       <% end %>
