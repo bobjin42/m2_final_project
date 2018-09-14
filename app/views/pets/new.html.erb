@@ -1,4 +1,9 @@
 
-<%= label_tag "Is the pet previously adopted from our store?" %>
+<div class="container-login300" style="background-image: url( <%= asset_path('bg-04.jpg') %>);">
+<div class="middle">
 
-<%= button_to "Yes", new_existing_path , method: :get %><%= button_to "No", new_giving_path, method: :get %>
+  <%= label_tag "Is the pet previously adopted from our store?" %>
+
+  <%= button_to "Yes", new_existing_path , method: :get %>
+  <%= button_to "No", new_giving_path, method: :get %>
+</div>
