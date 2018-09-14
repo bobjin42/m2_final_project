@@ -1,7 +1,11 @@
 <div class="container" id="show_pet">
 <div class="row">
 <div class="col-lg-8 text-center ">
+  <% if !@pet.image %>
+   Picture is not available
+  <% else %>
 <%= image_tag (@pet.image) %>
+<% end %>
 </div>
 <div class="col-lg-4 text-center">
 <h1><%= @pet.name %></h1>
