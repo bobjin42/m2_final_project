@@ -932,10 +932,7 @@ color: #444444;
   color: black;
 }
 
-.new_pet label{
-  font-size: 20px;
 
-}
 
 .form-login{
     width:350px;
@@ -958,9 +955,16 @@ color: #444444;
 
 
   .inputGroup {
+
+  max-width: 450px;
+  margin: auto;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
     background-color: #fff;
     display: block;
-    margin: 10px 0;
+
     position: relative;
 
     label {
@@ -1037,3 +1041,15 @@ color: #444444;
       visibility: hidden;
     }
   }
+
+
+// codepen formatting
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
