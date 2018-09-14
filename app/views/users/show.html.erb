@@ -1,7 +1,7 @@
 <div class="container text-center">
-<h1>Welcome <%= @user.name%></h1>
+<h1 class="top branch">Welcome <%= @user.name%></h1>
 
-<h3 class="h3">Adoption List</h3>
+<h3 class="h3 top">Adoption List</h3>
 <table style="width:100%">
   <thead class="black-white-text">
     <tr>
@@ -9,6 +9,7 @@
       <th>Pet Type</th>
       <th>Age</th>
       <th>Gender</th>
+      <th>Store</th>
       <th>Status</th>
     </tr>
   </thead>
@@ -18,13 +19,14 @@
   <td><%= pet.animal_type %></td>
   <td><%= pet.age %></td>
   <td><%= pet.gender %></td>
+  <td><%= pet.store.branch_name %></td>
   <td><%= "You have adopted #{pet.name} at #{pet.adoptions.last.adoption_date}" %></td>
 </tr>
   <% end %>
 </table>
 <br>
 <br>
-<h3 class="h3">New Given List</h3>
+<h3 class="h3">Given List</h3>
 <table style="width:100%">
   <thead class="black-white-text">
     <tr>
@@ -32,6 +34,7 @@
       <th>Pet Type</th>
       <th>Age</th>
       <th>Gender</th>
+      <th>Store</th>
       <th>Status</th>
     </tr>
   </thead>
@@ -41,6 +44,7 @@
   <td><%= pet.animal_type %></td>
   <td><%= pet.age %></td>
   <td><%= pet.gender %></td>
+  <td><%= pet.store.branch_name %></td>
   <td><%= "You have given #{pet.name} at #{pet.givings.last.giving_date}" %></td>
 </tr>
 <% end %>
