@@ -1,36 +1,45 @@
 
 
 <div class="container-login200" style="background-image: url( <%= asset_path('bg-03.jpg') %>);">
-  <div class="container text-center petform">
-    <div>
+  <div class="row">
+  <div class="col-sm-12">
       <h1 class="branch">Giving Pet Form</h1>
-    </div>
-    <br>
+
+ <br>
+
+    <div class="form-login box text-center">
+
+
+            <%= form_for @pet do |f| %>
+                <div class="form-group">
+                  <%= f.text_field :name, autofocus: true, placeholder:"Name",class:"form-control" %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label "Animal Type"%>
+                  <%= f.select("animal_type", ["Cat", "Dog", "Rabbit", "Hamster"]) %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.text_field :breed, placeholder:"Breed",class:"form-control" %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.text_field :age, placeholder:"Age",class:"form-control" %>
+                </div>
+
+                <div class="form-group">
+                  <%= f.label :gender%>
+                  <%= f.select("gender", ['Male', 'Female']) %><br>
+                </div>
 
 
 
-<%= form_for @pet do |f| %>
-
-  <%= f.label :name%>
-  <%= f.text_field :name %><br>
-  <br>
-  <%= f.label "Animal Type"%>
-  <%= f.select("animal_type", ["Cat", "Dog", "Rabbit", "Hamster"]) %><br>
-  <br>
-  <%= f.label :breed%>
-  <%= f.text_field :breed %><br>
-  <br>
-  <%= f.label :age%>
-  <%= f.number_field :age %><br>
-  <br>
-  <%= f.label :gender%>
-  <%= f.select("gender", ['Male', 'Female']) %><br>
-  <br>
-  <%= f.hidden_field :store_id %>
-  <br>
-
-
-  <%= f.submit "Give Your Pet",class: "btn btn-elegant" %>
-<% end %>
+                <div class="actions">
+                  <%= f.submit "give",class:"btn btn-lg btn-elegant" %>
+                </div>
+              <% end %>
 </div>
-</div>
+          </div>
+  </div>
+          </div>

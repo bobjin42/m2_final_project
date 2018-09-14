@@ -364,7 +364,7 @@ iframe {
 
 .container-login200 {
   width: 100%;
-  min-height: 100vh;
+  min-height: 93vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -936,3 +936,22 @@ color: #444444;
   font-size: 20px;
 
 }
+
+.form-login{
+    width:350px;
+
+    form{
+      padding:0 40px;
+      .btn-elegant{
+        width:100%;
+        line-height: 14px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      input{
+        border:1px solid #efefef;
+      }
+
+    }
+
+  }
