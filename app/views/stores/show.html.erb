@@ -2,7 +2,9 @@
   <div class="row ">
   <div class="col-sm-12 text-center ">
     <br><br>
-<h1>Welcome to <%= "#{@store.branch_name}" %></h1>
+    <div id="demotext">
+      <h1 class="branch">Welcome to <%= "#{@store.branch_name}" %></h1>
+    </div>
 
 
 <%= image_tag "store_#{@store.id}.jpg",class:"img-responsive"%>
