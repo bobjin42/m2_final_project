@@ -26,8 +26,8 @@ body{
 
 
 .p1 {
-  weight: 650px;
-  max-height:900px;
+  weight: 200px;
+  max-height:700px;
 }
 #cover{
   display: table;
@@ -648,7 +648,7 @@ iframe {
 .login100-form-btn {
   font-family: Poppins-Medium;
   font-size: 16px;
-  color: #555555;
+  color: #fff;
   line-height: 1.2;
 
   display: -webkit-box;
@@ -663,7 +663,7 @@ iframe {
   height: 50px;
   border-radius: 25px;
 
-  background: #9152f8;
+  background: #db7ad0;
   background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
   background: -o-linear-gradient(bottom, #7579ff, #b224ef);
   background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
@@ -918,10 +918,10 @@ color: #444444;
   }
 }
 
-.middle2 {
-  text-align: center;
-  font-size: 60px;
-  color: black;
+.middle_link>a {
+  color: #acc9ab;
+  font-size: 25px;
+
 }
 
 .boolean {
@@ -930,4 +930,9 @@ color: #444444;
   background: transparent;
   padding: 15px 32px;
   color: black;
+}
+
+.new_pet label{
+  font-size: 20px;
+
 }

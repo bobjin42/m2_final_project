@@ -10,7 +10,7 @@
 <% else %>
 <%= form_for @pet, :url => change_status_path do |f| %>
 <%= f.collection_check_boxes(:id, @pets, :id, :name ) %>
-<%= f.submit "Giving Pet",class: "btn btn-primary" %>
+<%= f.submit "Giving Pet",class: "btn btn-elegant" %>
 <% end %>
 <% end %>
 
