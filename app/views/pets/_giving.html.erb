@@ -3,28 +3,36 @@
     <h1 class="branch">Giving Your Adopted pets back to Store</h1>
   </div>
 <br>
-<div class="">
+<div class="container text-center">
 <% if @pets.empty? %>
 <h3>You Don't have any Pets that Adopted from our store</h3><br>
 <h3>Wanna Adopt some?</h3>
 <br>
 <br>
 <%= button_to "Adopt Pets", pets_path, {method: "get", class:'btn btn-elegant'} %>
-</div>
+
 
 <% else %>
 
   <%= form_for(@pet, :url => change_status_path) do |f| %>
   <%= f.collection_check_boxes(:id, @pets, :id, :name ) do |b| %>
-    <%= b.label(:name => b.value) {b.check_box + b.text} %><br>
+  <div class="inputGroup ">
+
+    <%= b.check_box %>
+    <%= b.label(:name => b.value)  %>
+  </div>
+
+
+
   <%end%>
 
 <%= f.submit "Giving Pet",class: "btn btn-elegant" %>
 <% end %>
 <% end %>
 
-
+<br>
 <div class="middle_link">
 <%= link_to "Back to Store page", stores_path %>
+</div>
 </div>
 </div>
