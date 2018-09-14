@@ -13,7 +13,7 @@
       <th>Status</th>
     </tr>
   </thead>
-<% @user.adoptor_pets.each do |pet| %>
+<% @uniq_pet.each do |pet| %>
 <tr>
   <td><%= pet.name %></td>
   <td><%= pet.animal_type %></td>
@@ -49,7 +49,7 @@
   <% if pet.adoptors.last != current_user %>
   <td><%= "You have given #{pet.name} at #{pet.givings.last.giving_date}" %></td>
   <% else %>
-  <td><%= "#{pet.adoptors.last.name} adopted #{pet.name} at #{pet.adoptions.last.adoption_date}" %></td>
+  <td><%= "#{pet.adoptors.last.name} adopted #{pet.name} at  #{pet.adoptions.last.adoption_date}" %></td>
   <% end %>
 </tr>
 <% end %>
