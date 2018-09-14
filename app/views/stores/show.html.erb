@@ -1,24 +1,28 @@
-<div class="container" id="branch">
-  <div class="row ">
-  <div class="col-sm-12 text-center ">
-    <br><br>
-    <div id="demotext">
-      <h1 class="branch">Welcome to <%= "#{@store.branch_name}" %></h1>
-    </div>
+<section class="home-video-area" id="about">
+      <div class="container-fluid">
+        <div class="row justify-content-end align-items-center text-center">
+          <div class="col-lg-4 no-padding video-right">
+            <p class="top-title"><%= "#{@store.branch_name}" %></p>
+            <h1>
+            Mission</h1>
+            <p><span>We are a nonprofit organization that finds homes for abandoned cats and dogs throughout the Tri-State area, and provides behavior intervention when needed to improve chances of adoption.  Founded in 2018,  We also provide programs that enhance the bond between animals and people.</span></p>
+
+            <div class="col-sm-6">
+          <%= button_to "Adopt a Pet", pets_path, {method: "get",class:'btn btn-elegant'} %>
+            </div>
+            <div class="col-sm-6">
+          <%= button_to "Give a Pet", new_pet_path, {method: "get",class:'btn btn-elegant'} %>
+            </div>
+          </div>
+          <section class="video-area col-lg-6">
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Xpnvug7Uwg8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+          </section>
 
 
-<%= image_tag "store_#{@store.id}.jpg",class:"img-responsive"%>
-<br>
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-  <%= button_to "Adopt a Pet", pets_path, {method: "get",class:'btn btn-big btn-primary'} %>
-    </div>
-    <div class="col-sm-6">
-  <%= button_to "Give a Pet", new_pet_path, {method: "get",class:'btn btn-big btn-primary'} %>
-    </div>
-   </div>
-  </div>
-  </div>
-  </div>
-</div>
+
+        </div>
+      </div>
+    </section>
+    <!-- End home-aboutus Area -->

@@ -1,18 +1,22 @@
 <div id="demotext">
+  <br>
   <h1 class="text-center branch top">Pet Adoption List</h1>
+  <br>
 </div>
 <div class="container">
 <div class="row ">
      <% @pets.each do |pet| %>
                             <!-- Single Product -->
-                            <div class="col-sm-4">
-                                <div class="single-pet-wrapper">
+                            <div class="col-sm-4 text-center">
+                                <div class=" card card-cascade text-center">
                                     <!-- Product Image -->
                                     <div class="product-img">
                                       <% if pet.image %>
                                       <a href=<%= "pets/#{pet.id}" %>>
                                         <%= image_tag (pet.image) %>
                                           </a>
+                                          <% else %>
+                                        <p>  This pet has no pics right now</p>
                                         <% end %>
 
                                     </div>
@@ -23,6 +27,7 @@
                                         <a href=<%= "pets/#{pet.id}" %>>
                                             <h6><%= pet.name %></h6>
                                         </a>
+                                        <br>
                                         <!-- <p class="product-price"><%= pet.gender %></p> -->
 
                                         <!-- Hover Content -->
@@ -32,7 +37,7 @@
                             </div>
 
 <% end %>
-      <div class="container text-center"></div>
+      <div class="container text-center">
       <%= link_to "Adopt Different Pets", pets_path,class:'btn btn-big btn-primary' %>
       </div>
 </div>
