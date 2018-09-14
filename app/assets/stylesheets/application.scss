@@ -53,8 +53,8 @@ body{
         overflow: hidden;
         display: -webkit-box;
         img {
-          width: 300px; /* You can set the dimensions to whatever you want */
-          height: 300px;
+          width: 330px; /* You can set the dimensions to whatever you want */
+          height: 330px;
           object-fit: cover;
 
         }
@@ -117,7 +117,7 @@ body{
         z-index: 1;
         padding-top: 25px;
         span {
-            font-size: 10px;
+            font-size: 18px;
             text-transform: uppercase;
             color: text-color;
             margin-bottom: 15px;
@@ -127,6 +127,7 @@ body{
         h6 {
             color: #222222;
             margin-bottom: 5px;
+            font-size: 25px;
         }
         p {
             margin-bottom: 0;
@@ -167,22 +168,7 @@ body{
             animation: favme-anime .5s;
         }
     }
-    &:hover {
-        .product-img {
-            .hover-img {
-                opacity: 1;
-                visibility: visible;
-            }
-            .product-favourite a {
-                opacity: 1;
-                visibility: visible;
-            }
-        }
-        .hover-content {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
+
 }
 
 .navbar  {
@@ -762,17 +748,15 @@ iframe {
 
 #show_pet {
         margin-top: 20px;
-        position:absolute;
+        position:relative;
         img {
-          width: 300px; /* You can set the dimensions to whatever you want */
-          height: 400px;
-
+          max-width: 500px; /* You can set the dimensions to whatever you want */
 
         }
 }
 #branch img{
   margin-top: 20px;
-  width:800px;
+  width:100%;
   height: auto;
   margin-bottom:20px;
 }

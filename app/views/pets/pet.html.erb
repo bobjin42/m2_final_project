@@ -1,5 +1,8 @@
-<h1 class="text-center">pet Adoption List</h1>
-<div class="container">
+
+<div class="container text-center">
+  <br>
+  <h1 class="text-center">Pet Adoption List</h1>
+  <br>
 <div class="row ">
      <% @pets.each do |pet| %>
                             <!-- Single Product -->
@@ -8,7 +11,9 @@
                                     <!-- Product Image -->
                                     <div class="product-img">
                                       <% if pet.image %>
+                                      <a href=<%= "pets/#{pet.id}" %>>
                                         <%= image_tag (pet.image) %>
+                                          </a>
                                         <% end %>
 
                                     </div>
@@ -22,22 +27,14 @@
                                         <!-- <p class="product-price"><%= pet.gender %></p> -->
 
                                         <!-- Hover Content -->
-                                        <div class="hover-content">
-                                            <!-- Add to Cart -->
-                                            <div class="add-to-cart-btn">
-                                              <%= link_to "details",pet,:class=>"btn essence-btn" %>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
 
 <% end %>
-
+      <div class="container text-center"></div>
+      <%= link_to "Adopt Different Pets", pets_path,class:'btn btn-big btn-primary' %>
+      </div>
 </div>
 </div>
-
-
-
-
-<%= link_to "Adopt Different Pets", pets_path,class: "text-center" %>
