@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def show
     @user = user_find
+    @pets = @user.adoptor_pets.where(status: false)
+    @uniq_pet = @pets.uniq
   end
 
   def edit
