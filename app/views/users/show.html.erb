@@ -39,13 +39,18 @@
     </tr>
   </thead>
 <% @user.giver_pets.each do |pet| %>
+
 <tr>
   <td><%= pet.name %></td>
   <td><%= pet.animal_type %></td>
   <td><%= pet.age %></td>
   <td><%= pet.gender %></td>
   <td><%= pet.store.branch_name %></td>
+  <% if pet.adoptors.last != current_user %>
+  <td><%= "#{pet.adoptors.last.name} adopted #{pet.name} at #{pet.adoptions.last.adoption_date}" %></td>
+  <% else %>
   <td><%= "You have given #{pet.name} at #{pet.givings.last.giving_date}" %></td>
+  <% end %>
 </tr>
 <% end %>
 </table>
