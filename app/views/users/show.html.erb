@@ -13,7 +13,7 @@
       <th>Status</th>
     </tr>
   </thead>
-<% @user.adoptor_pets.where(status: false).each do |pet| %>
+<% @uniq_pet.each do |pet| %>
 <tr>
   <td><%= pet.name %></td>
   <td><%= pet.animal_type %></td>

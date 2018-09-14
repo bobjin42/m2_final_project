@@ -16,11 +16,7 @@
 
   <%= form_for(@pet, :url => change_status_path) do |f| %>
   <%= f.collection_check_boxes(:id, @pets, :id, :name ) do |b| %>
-
-  <div class="inputGroup">
     <%= b.label(:name => b.value) {b.check_box + b.text} %><br>
-  </div>
-
   <%end%>
 
 <%= f.submit "Giving Pet",class: "btn btn-elegant" %>
